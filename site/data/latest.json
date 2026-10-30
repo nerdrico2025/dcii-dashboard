@@ -1,0 +1,1028 @@
+{
+  "schema_version": "1.0",
+  "sample": true,
+  "default_language": "en-CA",
+  "labels": {
+    "page.title": {
+      "en_CA": "DCTI-Institute – Weekly GTM Dashboard",
+      "pt_BR": "DCTI-Institute – Painel Semanal de GTM"
+    },
+    "box.executing": {
+      "en_CA": "Executing",
+      "pt_BR": "Executando"
+    },
+    "box.how_its_going": {
+      "en_CA": "How it's going",
+      "pt_BR": "Como está"
+    },
+    "box.what_to_change": {
+      "en_CA": "What to change",
+      "pt_BR": "O que mudar"
+    },
+    "box.needs_from_team": {
+      "en_CA": "What we need from the team",
+      "pt_BR": "O que precisamos do time"
+    },
+    "product.isra": {
+      "en_CA": "Sintera® ISRA",
+      "pt_BR": "Sintera® ISRA"
+    },
+    "product.stl_course": {
+      "en_CA": "STL Course",
+      "pt_BR": "Curso STL"
+    },
+    "product.ai_transformation": {
+      "en_CA": "AI Transformation",
+      "pt_BR": "Transformação com IA"
+    },
+    "stage.site_visits": {
+      "en_CA": "Site visits",
+      "pt_BR": "Visitas ao site"
+    },
+    "stage.white_paper_download": {
+      "en_CA": "White paper downloads",
+      "pt_BR": "Downloads do white paper"
+    },
+    "stage.newsletter_signup": {
+      "en_CA": "Newsletter sign-ups",
+      "pt_BR": "Inscrições na newsletter"
+    },
+    "stage.product_page_view": {
+      "en_CA": "Product page views",
+      "pt_BR": "Visualizações da página do produto"
+    },
+    "stage.demo_trial_request": {
+      "en_CA": "Demo/trial requests",
+      "pt_BR": "Pedidos de demo/teste"
+    },
+    "stage.sale_revenue": {
+      "en_CA": "Sales (revenue)",
+      "pt_BR": "Vendas (receita)"
+    },
+    "status.green": {
+      "en_CA": "Green",
+      "pt_BR": "Verde"
+    },
+    "status.yellow": {
+      "en_CA": "Yellow",
+      "pt_BR": "Amarelo"
+    },
+    "status.red": {
+      "en_CA": "Red",
+      "pt_BR": "Vermelho"
+    },
+    "status.gray": {
+      "en_CA": "Grey",
+      "pt_BR": "Cinza"
+    },
+    "pillar_group.content": {
+      "en_CA": "Content",
+      "pt_BR": "Conteúdo"
+    },
+    "pillar_group.external_authority": {
+      "en_CA": "External authority",
+      "pt_BR": "Autoridade externa"
+    },
+    "pillar_group.lead_capture": {
+      "en_CA": "Lead capture",
+      "pt_BR": "Captação de leads"
+    },
+    "pillar_group.community": {
+      "en_CA": "Community",
+      "pt_BR": "Comunidade"
+    },
+    "kpi.posts_published": {
+      "en_CA": "Posts published",
+      "pt_BR": "Posts publicados"
+    },
+    "kpi.articles_published": {
+      "en_CA": "Articles published",
+      "pt_BR": "Artigos publicados"
+    },
+    "kpi.subscribers": {
+      "en_CA": "Subscribers",
+      "pt_BR": "Assinantes"
+    },
+    "kpi.pitches_sent": {
+      "en_CA": "Pitches sent",
+      "pt_BR": "Pautas enviadas"
+    },
+    "kpi.downloads": {
+      "en_CA": "Downloads",
+      "pt_BR": "Downloads"
+    },
+    "kpi.spend": {
+      "en_CA": "Spend",
+      "pt_BR": "Investimento"
+    },
+    "kpi.meetings_booked": {
+      "en_CA": "Meetings booked",
+      "pt_BR": "Reuniões agendadas"
+    },
+    "kpi.report_delivered": {
+      "en_CA": "Report delivered",
+      "pt_BR": "Relatório entregue"
+    },
+    "lang.selector_label": {
+      "en_CA": "Language",
+      "pt_BR": "Idioma"
+    },
+    "lang.en_CA": {
+      "en_CA": "English (Canada)",
+      "pt_BR": "Inglês (Canadá)"
+    },
+    "lang.pt_BR": {
+      "en_CA": "Portuguese (Brazil)",
+      "pt_BR": "Português (Brasil)"
+    },
+    "tracking.automated": {
+      "en_CA": "Automated",
+      "pt_BR": "Automatizado"
+    },
+    "tracking.manual": {
+      "en_CA": "Manual",
+      "pt_BR": "Manual"
+    },
+    "tracking.not_yet": {
+      "en_CA": "Not yet",
+      "pt_BR": "Ainda não"
+    },
+    "label.automation_coverage": {
+      "en_CA": "Automation coverage",
+      "pt_BR": "Cobertura de automação"
+    },
+    "label.waiting_in_review_days": {
+      "en_CA": "Waiting in review (days)",
+      "pt_BR": "Aguardando revisão (dias)"
+    },
+    "label.strategy": {
+      "en_CA": "Strategy",
+      "pt_BR": "Estratégia"
+    },
+    "strategy.positioning": {
+      "en_CA": "Positioning",
+      "pt_BR": "Posicionamento"
+    },
+    "strategy.target": {
+      "en_CA": "Target",
+      "pt_BR": "Público-alvo"
+    },
+    "strategy.engine": {
+      "en_CA": "Engine",
+      "pt_BR": "Motor de crescimento"
+    },
+    "label.week": {
+      "en_CA": "Week",
+      "pt_BR": "Semana"
+    },
+    "label.snapshot_date": {
+      "en_CA": "Updated",
+      "pt_BR": "Atualizado em"
+    },
+    "label.funnel": {
+      "en_CA": "Funnel by product",
+      "pt_BR": "Funil por produto"
+    },
+    "label.funnel_caption": {
+      "en_CA": "Value this week, change vs. last week and status against target.",
+      "pt_BR": "Valor da semana, variação vs. semana anterior e status em relação à meta."
+    },
+    "label.product": {
+      "en_CA": "Product",
+      "pt_BR": "Produto"
+    },
+    "label.vs_last_week": {
+      "en_CA": "vs. last week",
+      "pt_BR": "vs. semana anterior"
+    },
+    "label.no_data_yet": {
+      "en_CA": "No data yet",
+      "pt_BR": "Sem dados ainda"
+    },
+    "badge.provisional": {
+      "en_CA": "Provisional",
+      "pt_BR": "Provisório"
+    },
+    "label.pillars": {
+      "en_CA": "Pillars",
+      "pt_BR": "Pilares"
+    },
+    "label.process_health": {
+      "en_CA": "Process health",
+      "pt_BR": "Saúde do processo"
+    },
+    "label.coverage_value": {
+      "en_CA": "{automated} of {total} items automated",
+      "pt_BR": "{automated} de {total} itens automatizados"
+    },
+    "label.items_in_review": {
+      "en_CA": "Items in review",
+      "pt_BR": "Itens em revisão"
+    },
+    "label.sample_data": {
+      "en_CA": "Sample data",
+      "pt_BR": "Dados de exemplo"
+    },
+    "pillar_item.linkedin_posts_and_articles": {
+      "en_CA": "LinkedIn (posts and articles)",
+      "pt_BR": "LinkedIn (posts e artigos)"
+    },
+    "pillar_item.website_articles": {
+      "en_CA": "Website articles",
+      "pt_BR": "Artigos no site"
+    },
+    "pillar_item.newsletter": {
+      "en_CA": "Newsletter",
+      "pt_BR": "Newsletter"
+    },
+    "pillar_item.prestigious_outlets_hbr_etc_articles_and_interviews": {
+      "en_CA": "Prestigious outlets (HBR, etc.) – articles and interviews",
+      "pt_BR": "Veículos de prestígio (HBR etc.) – artigos e entrevistas"
+    },
+    "pillar_item.white_paper_and_entry_materials": {
+      "en_CA": "White paper and entry materials",
+      "pt_BR": "White paper e materiais de entrada"
+    },
+    "pillar_item.paid_media": {
+      "en_CA": "Paid media",
+      "pt_BR": "Mídia paga"
+    },
+    "pillar_item.active_prospecting_and_site": {
+      "en_CA": "Active prospecting and site",
+      "pt_BR": "Prospecção ativa e site"
+    },
+    "pillar_item.monthly_community_report_internal_feeds_content_ideas": {
+      "en_CA": "Monthly community report (internal, feeds content ideas)",
+      "pt_BR": "Relatório mensal da comunidade (interno, alimenta ideias de conteúdo)"
+    }
+  },
+  "strategy": [
+    {
+      "topic": "Positioning",
+      "text_en_CA": "Trusted advisor to CEOs. A data and technology organization focused on practical action, backed by an institute with years of experience in change transformation.",
+      "text_pt_BR": "Consultor de confiança (trusted advisor) dos CEOs. Uma organização de dados e tecnologia focada em ação prática, com o respaldo de um instituto com anos de experiência em change transformation.",
+      "valid_from": "2026-10-26",
+      "version": "v1"
+    },
+    {
+      "topic": "Target",
+      "text_en_CA": "3 avatars x 3 products, one campaign per funnel.",
+      "text_pt_BR": "3 avatares × 3 produtos, uma campanha por funil.",
+      "valid_from": "2026-10-26",
+      "version": "v1"
+    },
+    {
+      "topic": "Engine",
+      "text_en_CA": "Thought-provoking, institutional content (never declaring what is right or wrong): articles on the website, newsletter, strategic LinkedIn posts, and external authority channels (articles, audio or video interviews in respected outlets), plus ads leading to an ISRA demo or trial.",
+      "text_pt_BR": "Conteúdo instigante e institucional (sem decretar o que é certo ou errado): artigos no site, newsletter, posts estratégicos no LinkedIn e canais externos de autoridade (artigos, entrevistas em áudio ou vídeo em veículos de prestígio), mais anúncios que levam a uma demo ou teste do ISRA.",
+      "valid_from": "2026-10-26",
+      "version": "v1"
+    }
+  ],
+  "snapshot": {
+    "snapshot_date": "2026-11-02",
+    "week_start": "2026-10-26",
+    "executing_text_en_CA": "Published 1 article and 1 LinkedIn post (sample titles).\nDelivered the monthly community report.\n1 article draft is waiting in review.",
+    "executing_text_pt_BR": "Publicados 1 artigo e 1 post no LinkedIn (títulos de exemplo).\nRelatório mensal da comunidade entregue.\n1 rascunho de artigo aguarda revisão.",
+    "how_its_going_status": "Yellow",
+    "how_its_going_text_en_CA": "Yellow: Sintera® ISRA product page views are at 75% of target and AI Transformation page views at 60%.\nAutomation coverage changed: 1 automated, 2 manual, 5 not yet.",
+    "how_its_going_text_pt_BR": "Amarelo: as visualizações da página do Sintera® ISRA estão em 75% da meta e as de Transformação com IA em 60%.\nA cobertura de automação mudou: 1 automatizado, 2 manuais, 5 ainda não.",
+    "what_to_change_text_en_CA": "Review the AI Transformation product page, the line furthest below target.\nConnect a data source for the stages that still have no data.\nFinish the review of the article draft that has waited 4 days.",
+    "what_to_change_text_pt_BR": "Revisar a página do produto Transformação com IA, a linha mais abaixo da meta.\nConectar uma fonte de dados para as etapas que ainda não têm dados.\nConcluir a revisão do rascunho de artigo que aguarda há 4 dias.",
+    "needs_from_team_en_CA": "Review the article draft that has been waiting for 4 days.",
+    "needs_from_team_pt_BR": "Revisar o rascunho de artigo que aguarda há 4 dias.",
+    "report_url": ""
+  },
+  "kpi": {
+    "week_start": "2026-10-26",
+    "week_end": "2026-11-01",
+    "currency": "EUR",
+    "status_rules": {
+      "green_min_pct": 100,
+      "yellow_min_pct": 70,
+      "review_alert_days": 3
+    },
+    "how_its_going_status": "Yellow",
+    "funnel": [
+      {
+        "product": "ISRA",
+        "stage": "Site visits",
+        "unit": "count",
+        "provisional": false,
+        "value": 118,
+        "target_per_week": 100,
+        "pct_of_plan": 118,
+        "status": "Green",
+        "previous_week_value": 102,
+        "change_abs": 16,
+        "change_pct": 15.7,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": 102
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": 95
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": 88
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "ISRA",
+        "stage": "White paper download",
+        "unit": "count",
+        "provisional": false,
+        "value": 3,
+        "target_per_week": null,
+        "pct_of_plan": null,
+        "status": "Gray",
+        "previous_week_value": 2,
+        "change_abs": 1,
+        "change_pct": 50,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": 2
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": 1
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "ISRA",
+        "stage": "Newsletter signup",
+        "unit": "count",
+        "provisional": false,
+        "value": 5,
+        "target_per_week": null,
+        "pct_of_plan": null,
+        "status": "Gray",
+        "previous_week_value": 5,
+        "change_abs": 0,
+        "change_pct": 0,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": 5
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": 3
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "ISRA",
+        "stage": "Product page view",
+        "unit": "count",
+        "provisional": false,
+        "value": 42,
+        "target_per_week": 56,
+        "pct_of_plan": 75,
+        "status": "Yellow",
+        "previous_week_value": 47,
+        "change_abs": -5,
+        "change_pct": -10.6,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": 47
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": 39
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "ISRA",
+        "stage": "Demo/Trial request",
+        "unit": "count",
+        "provisional": false,
+        "value": 2,
+        "target_per_week": 2,
+        "pct_of_plan": 100,
+        "status": "Green",
+        "previous_week_value": 1,
+        "change_abs": 1,
+        "change_pct": 100,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": 1
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": 0
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "ISRA",
+        "stage": "Sale (revenue)",
+        "unit": "EUR",
+        "provisional": false,
+        "value": null,
+        "target_per_week": null,
+        "pct_of_plan": null,
+        "status": "Gray",
+        "previous_week_value": null,
+        "change_abs": null,
+        "change_pct": null,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": null
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": null
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "STL Course",
+        "stage": "Site visits",
+        "unit": "count",
+        "provisional": false,
+        "value": 76,
+        "target_per_week": null,
+        "pct_of_plan": null,
+        "status": "Gray",
+        "previous_week_value": 81,
+        "change_abs": -5,
+        "change_pct": -6.2,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": 81
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": 70
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "STL Course",
+        "stage": "White paper download",
+        "unit": "count",
+        "provisional": false,
+        "value": 2,
+        "target_per_week": null,
+        "pct_of_plan": null,
+        "status": "Gray",
+        "previous_week_value": 2,
+        "change_abs": 0,
+        "change_pct": 0,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": 2
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": null
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "STL Course",
+        "stage": "Newsletter signup",
+        "unit": "count",
+        "provisional": false,
+        "value": 3,
+        "target_per_week": null,
+        "pct_of_plan": null,
+        "status": "Gray",
+        "previous_week_value": 1,
+        "change_abs": 2,
+        "change_pct": 200,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": 1
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": null
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "STL Course",
+        "stage": "Product page view",
+        "unit": "count",
+        "provisional": false,
+        "value": 28,
+        "target_per_week": 25,
+        "pct_of_plan": 112,
+        "status": "Green",
+        "previous_week_value": 24,
+        "change_abs": 4,
+        "change_pct": 16.7,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": 24
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": 22
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "STL Course",
+        "stage": "Demo/Trial request",
+        "unit": "count",
+        "provisional": false,
+        "value": 1,
+        "target_per_week": null,
+        "pct_of_plan": null,
+        "status": "Gray",
+        "previous_week_value": 0,
+        "change_abs": 1,
+        "change_pct": null,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": 0
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": null
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "STL Course",
+        "stage": "Sale (revenue)",
+        "unit": "EUR",
+        "provisional": false,
+        "value": 490,
+        "target_per_week": null,
+        "pct_of_plan": null,
+        "status": "Gray",
+        "previous_week_value": 0,
+        "change_abs": 490,
+        "change_pct": null,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": 0
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": null
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "AI Transformation",
+        "stage": "Site visits",
+        "unit": "count",
+        "provisional": false,
+        "value": 34,
+        "target_per_week": null,
+        "pct_of_plan": null,
+        "status": "Gray",
+        "previous_week_value": 39,
+        "change_abs": -5,
+        "change_pct": -12.8,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": 39
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": 31
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "AI Transformation",
+        "stage": "White paper download",
+        "unit": "count",
+        "provisional": false,
+        "value": null,
+        "target_per_week": null,
+        "pct_of_plan": null,
+        "status": "Gray",
+        "previous_week_value": null,
+        "change_abs": null,
+        "change_pct": null,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": null
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": null
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "AI Transformation",
+        "stage": "Newsletter signup",
+        "unit": "count",
+        "provisional": false,
+        "value": null,
+        "target_per_week": null,
+        "pct_of_plan": null,
+        "status": "Gray",
+        "previous_week_value": null,
+        "change_abs": null,
+        "change_pct": null,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": null
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": null
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "AI Transformation",
+        "stage": "Product page view",
+        "unit": "count",
+        "provisional": false,
+        "value": 12,
+        "target_per_week": 20,
+        "pct_of_plan": 60,
+        "status": "Red",
+        "previous_week_value": 9,
+        "change_abs": 3,
+        "change_pct": 33.3,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": 9
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": 10
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "AI Transformation",
+        "stage": "Demo/Trial request",
+        "unit": "count",
+        "provisional": true,
+        "value": 0,
+        "target_per_week": null,
+        "pct_of_plan": null,
+        "status": "Gray",
+        "previous_week_value": 1,
+        "change_abs": -1,
+        "change_pct": -100,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": 1
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": 0
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      },
+      {
+        "product": "AI Transformation",
+        "stage": "Sale (revenue)",
+        "unit": "EUR",
+        "provisional": false,
+        "value": null,
+        "target_per_week": null,
+        "pct_of_plan": null,
+        "status": "Gray",
+        "previous_week_value": null,
+        "change_abs": null,
+        "change_pct": null,
+        "history": [
+          {
+            "week_start": "2026-10-19",
+            "value": null
+          },
+          {
+            "week_start": "2026-10-12",
+            "value": null
+          },
+          {
+            "week_start": "2026-10-05",
+            "value": null
+          },
+          {
+            "week_start": "2026-09-28",
+            "value": null
+          }
+        ]
+      }
+    ],
+    "activities_executed": [
+      {
+        "pillar_item": "Website articles",
+        "activity_type": "Article",
+        "title": "Sample article A",
+        "final_status": "Published",
+        "url": ""
+      },
+      {
+        "pillar_item": "LinkedIn (posts and articles)",
+        "activity_type": "LinkedIn post",
+        "title": "Sample post A",
+        "final_status": "Published",
+        "url": ""
+      },
+      {
+        "pillar_item": "Monthly community report (internal, feeds content ideas)",
+        "activity_type": "Report",
+        "title": "Sample monthly report",
+        "final_status": "Done",
+        "url": ""
+      },
+      {
+        "pillar_item": "Website articles",
+        "activity_type": "Article",
+        "title": "Sample article B",
+        "final_status": "In review",
+        "url": ""
+      }
+    ],
+    "in_review": {
+      "count": 1,
+      "max_days_waiting": 4,
+      "items": [
+        {
+          "pillar_item": "Website articles",
+          "title": "Sample article B",
+          "in_review_since": "2026-10-29",
+          "days_waiting": 4
+        }
+      ]
+    },
+    "automation_coverage": {
+      "automated": 1,
+      "manual": 2,
+      "not_yet": 5,
+      "total": 8,
+      "previous_week": {
+        "automated": 1,
+        "manual": 1,
+        "not_yet": 6
+      },
+      "changed_vs_previous_week": true
+    },
+    "pillars_with_value": [
+      {
+        "group": "Content",
+        "item": "LinkedIn (posts and articles)",
+        "kpi_name": "posts published",
+        "kpi_value": 1,
+        "tracking": "Manual",
+        "last_update": "2026-11-02"
+      },
+      {
+        "group": "Content",
+        "item": "Website articles",
+        "kpi_name": "articles published",
+        "kpi_value": 1,
+        "tracking": "Manual",
+        "last_update": "2026-11-02"
+      },
+      {
+        "group": "Community",
+        "item": "Monthly community report (internal, feeds content ideas)",
+        "kpi_name": "report delivered",
+        "kpi_value": 1,
+        "tracking": "Automated",
+        "last_update": "2026-11-02"
+      }
+    ],
+    "pillars_all": [
+      {
+        "group": "Content",
+        "item": "LinkedIn (posts and articles)",
+        "kpi_name": "posts published",
+        "kpi_value": 1,
+        "tracking": "Manual",
+        "unit": "count"
+      },
+      {
+        "group": "Content",
+        "item": "Website articles",
+        "kpi_name": "articles published",
+        "kpi_value": 1,
+        "tracking": "Manual",
+        "unit": "count"
+      },
+      {
+        "group": "Content",
+        "item": "Newsletter",
+        "kpi_name": "subscribers",
+        "kpi_value": null,
+        "tracking": "Not yet",
+        "unit": "count"
+      },
+      {
+        "group": "External authority",
+        "item": "Prestigious outlets (HBR, etc.) - articles and interviews",
+        "kpi_name": "pitches sent",
+        "kpi_value": null,
+        "tracking": "Not yet",
+        "unit": "count"
+      },
+      {
+        "group": "Lead capture",
+        "item": "White paper and entry materials",
+        "kpi_name": "downloads",
+        "kpi_value": null,
+        "tracking": "Not yet",
+        "unit": "count"
+      },
+      {
+        "group": "Lead capture",
+        "item": "Paid media",
+        "kpi_name": "spend",
+        "kpi_value": null,
+        "tracking": "Not yet",
+        "unit": "EUR"
+      },
+      {
+        "group": "Lead capture",
+        "item": "Active prospecting and site",
+        "kpi_name": "meetings booked",
+        "kpi_value": null,
+        "tracking": "Not yet",
+        "unit": "count"
+      },
+      {
+        "group": "Community",
+        "item": "Monthly community report (internal, feeds content ideas)",
+        "kpi_name": "report delivered",
+        "kpi_value": 1,
+        "tracking": "Automated",
+        "unit": "count"
+      }
+    ],
+    "stages_without_data": [
+      "ISRA / Sale (revenue)",
+      "AI Transformation / White paper download",
+      "AI Transformation / Newsletter signup",
+      "AI Transformation / Sale (revenue)"
+    ],
+    "collection": {
+      "stages_without_source": [
+        "ISRA / Sale (revenue)",
+        "AI Transformation / White paper download",
+        "AI Transformation / Newsletter signup",
+        "AI Transformation / Sale (revenue)"
+      ],
+      "failures": []
+    }
+  }
+}

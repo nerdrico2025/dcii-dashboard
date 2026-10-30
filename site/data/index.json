@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "weeks": [
+    {
+      "week_start": "2026-10-26",
+      "snapshot_date": "2026-11-02",
+      "file": "2026-10-26.json",
+      "how_its_going_status": "Yellow",
+      "sample": true
+    }
+  ]
+}

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>DCTI-Institute</title>
+<style>
+  :root {
+    --text: #1b2430;
+    --muted: #4a5563;
+    --line: #d6dde6;
+    --soft: #f6f8fb;
+    --accent: #1f5fa8;
+    --accent-soft: #eaf2fb;
+    --radius: 10px;
+    --gap: 20px;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { background: #fff; }
+  body {
+    margin: 0; background: #fff; color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px; line-height: 1.5;
+  }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 24px 28px 40px; }
+  h1, h2, h3 { line-height: 1.25; margin: 0; }
+  h2 { font-size: 1.05rem; font-weight: 650; }
+  h3 { font-size: 0.95rem; font-weight: 650; }
+  p { margin: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+  .visually-hidden {
+    position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+
+  /* ---------- header */
+  .site-header {
+    display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between;
+    gap: 16px 32px; padding-bottom: 18px; border-bottom: 1px solid var(--line);
+  }
+  .brand { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+  .site-header h1 { font-size: 1.6rem; font-weight: 700; margin-top: 4px; }
+  .meta { margin-top: 6px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 20px; }
+  .meta strong { color: var(--text); font-weight: 600; }
+  .controls { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px; }
+  .control-label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 4px; }
+  select {
+    font: inherit; color: var(--text); background: #fff; min-height: 40px;
+    border: 1px solid #8a97a8; border-radius: 8px; padding: 6px 10px;
+  }
+  .lang-group { display: inline-flex; border: 1px solid #8a97a8; border-radius: 8px; overflow: hidden; }
+  .lang-group button {
+    font: inherit; font-weight: 600; min-height: 40px; min-width: 64px; padding: 6px 12px;
+    background: #fff; color: var(--text); border: 0; cursor: pointer;
+  }
+  .lang-group button + button { border-left: 1px solid #8a97a8; }
+  .lang-group button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+
+  .sample-banner {
+    margin-top: 14px; display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.9rem; color: #5b3d00; background: #fff6dd; border: 1px solid #e7cf86;
+    border-radius: 999px; padding: 4px 12px;
+  }
+  .notice {
+    margin-top: 24px; padding: 16px 18px; border: 1px solid #f1a7a7; background: #fde8e8;
+    color: #7a1616; border-radius: var(--radius);
+  }
+  .notice p + p { margin-top: 6px; }
+  .notice-info { border-color: #e6c66a; background: #fff8e1; color: #5b3d00; }
+
+  /* ---------- sections */
+  section { margin-top: 28px; }
+  .section-title { margin-bottom: 12px; }
+  .card { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: 16px 18px; }
+  .lead { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--gap); align-items: start; }
+  .strategy { background: var(--soft); }
+  .strategy h2 { margin-bottom: 10px; }
+  .strategy-item + .strategy-item { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+  .strategy-item h3 { color: var(--accent); margin-bottom: 2px; }
+  .strategy-item p { color: var(--text); font-size: 0.95rem; }
+  .boxes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+  .box h2 { margin-bottom: 10px; }
+  .lines li { padding-left: 14px; position: relative; }
+  .lines li + li { margin-top: 8px; }
+  .lines li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .box-status { margin-bottom: 10px; }
+  .needs { margin-top: var(--gap); border-left: 4px solid var(--accent); background: var(--accent-soft); }
+  .needs h2 { margin-bottom: 6px; }
+
+  /* ---------- status / badges */
+  .status {
+    display: inline-flex; align-items: center; gap: 6px; font-weight: 650; font-size: 0.85rem;
+    border: 1px solid; border-radius: 999px; padding: 2px 10px 2px 6px; white-space: nowrap;
+  }
+  .status .icon {
+    display: inline-flex; align-items: center; justify-content: center; width: 1.25em; height: 1.25em;
+    border-radius: 50%; font-size: 0.8em; font-weight: 800; color: #fff;
+  }
+  .status-large { font-size: 1.05rem; padding: 4px 14px 4px 8px; }
+  .st-green  { background: #e7f5ec; color: #14532d; border-color: #9fd3b2; }
+  .st-green .icon  { background: #1f7a43; }
+  .st-yellow { background: #fff5d6; color: #5f4200; border-color: #e6c66a; }
+  .st-yellow .icon { background: #8a6300; }
+  .st-red    { background: #fde8e8; color: #8b1a1a; border-color: #f1a7a7; }
+  .st-red .icon    { background: #b42323; }
+  .st-gray   { background: #eef1f4; color: #39424e; border-color: #c9d1da; }
+  .st-gray .icon   { background: #5d6875; }
+  .badge {
+    display: inline-block; font-size: 0.78rem; font-weight: 600; border-radius: 6px; padding: 1px 8px;
+    border: 1px solid var(--line); background: #fff; color: var(--muted); white-space: nowrap;
+  }
+  .badge-provisional { border-style: dashed; border-color: #8a6300; color: #5f4200; background: #fffaf0; }
+  .tr-automated { background: var(--accent-soft); border-color: #9cbde3; color: #174a85; }
+  .tr-manual { background: #f3f0fa; border-color: #c6b9e6; color: #4a3585; }
+  .tr-not_yet { background: #fff; border-color: #c9d1da; color: #4a5563; }
+
+  /* ---------- funnel table */
+  .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+  table { border-collapse: collapse; width: 100%; min-width: 880px; }
+  caption { text-align: left; padding: 12px 16px 0; color: var(--muted); font-size: 0.9rem; }
+  th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-top: 1px solid var(--line); }
+  thead th { font-size: 0.85rem; color: var(--muted); font-weight: 650; border-top: 0; padding-top: 10px; }
+  tbody th { font-weight: 700; white-space: nowrap; }
+  td + td, th + td, td + th { border-left: 1px solid #edf1f5; }
+  .value { display: block; font-size: 1.45rem; font-weight: 700; line-height: 1.15; font-variant-numeric: tabular-nums; }
+  .change { display: block; font-size: 0.85rem; color: var(--muted); margin: 2px 0 6px; font-variant-numeric: tabular-nums; }
+  .change .arrow { font-weight: 700; color: var(--text); }
+  .no-data { display: block; color: var(--muted); font-style: italic; margin-bottom: 6px; }
+  .cell-badges { display: flex; flex-wrap: wrap; gap: 4px; }
+
+  /* ---------- pillars */
+  .pillars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); }
+  .pillar h3 { margin-bottom: 10px; }
+  .pillar-item + .pillar-item { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); }
+  .pillar-item .name { font-weight: 600; font-size: 0.95rem; }
+  .pillar-item .kpi { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin-top: 4px; }
+  .pillar-item .kpi-name { color: var(--muted); font-size: 0.9rem; }
+  .pillar-item .kpi-value { font-weight: 700; font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+  .muted { color: var(--muted); }
+
+  /* ---------- process health */
+  .health { display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 16px 18px; border-top: 1px solid var(--line); margin-top: 28px; }
+  .health h2 { width: 100%; }
+  .health-item .k { color: var(--muted); font-size: 0.9rem; display: block; }
+  .health-item .v { font-weight: 700; font-size: 1.1rem; font-variant-numeric: tabular-nums; }
+  .health-item .detail { color: var(--muted); font-size: 0.9rem; margin-left: 6px; }
+
+  /* ---------- responsive */
+  @media (max-width: 1100px) { .boxes { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) {
+    .lead { grid-template-columns: 1fr; }
+    .pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 600px) {
+    .wrap { padding: 16px 14px 32px; }
+    tbody th, thead th:first-child { position: sticky; left: 0; z-index: 1; background: #fff; box-shadow: 1px 0 0 var(--line); white-space: normal; min-width: 110px; }
+    .site-header h1 { font-size: 1.3rem; }
+    .pillars { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  }
+
+  /* ---------- print: one A4 landscape page */
+  @page { size: A4 landscape; margin: 8mm; }
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body { font-size: 7.5pt; line-height: 1.28; }
+    .site-header > div:first-child { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 4mm; }
+    .site-header > div:first-child .brand { width: 100%; }
+    .site-header .meta, .site-header .sample-banner { margin-top: 0; }
+    .lines li { padding-left: 9px; }
+    .lines li::before { width: 4px; height: 4px; }
+    .box-status { margin-bottom: 1.5mm; }
+    .change { display: inline; margin-right: 4px; }
+    .value { display: inline; margin-right: 4px; }
+    .cell-badges { margin-top: 0.8mm; }
+    .no-data { margin-bottom: 0; }
+    .pillar-item .kpi { margin-top: 0; }
+    .wrap { max-width: none; padding: 0; }
+    .controls { display: none !important; }
+    .site-header { padding-bottom: 2mm; gap: 0 6mm; }
+    .site-header h1 { font-size: 13pt; margin-top: 0; }
+    .brand { font-size: 7pt; }
+    .meta { margin-top: 1mm; }
+    .sample-banner { margin-top: 1.5mm; font-size: 7pt; padding: 0 6px; }
+    section { margin-top: 3mm; }
+    .section-title { margin-bottom: 1.5mm; }
+    h2 { font-size: 9pt; } h3 { font-size: 8.5pt; }
+    .card { padding: 2.5mm 3mm; border-radius: 6px; break-inside: avoid; }
+    .lead { grid-template-columns: 1fr 3fr; gap: 3mm; }
+    .boxes { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3mm; }
+    .box h2, .strategy h2 { margin-bottom: 1.5mm; }
+    .strategy-item p { font-size: 7pt; }
+    .strategy-item + .strategy-item { margin-top: 1.5mm; padding-top: 1.5mm; }
+    .lines li + li { margin-top: 1mm; }
+    .needs { margin-top: 2mm; }
+    .table-scroll { overflow: visible; border-radius: 6px; }
+    table { min-width: 0; }
+    caption { padding: 1.5mm 2mm 0; font-size: 7pt; }
+    th, td { padding: 1.2mm 2mm; }
+    .value { font-size: 10pt; }
+    .change { font-size: 7pt; }
+    .status { font-size: 7pt; padding: 0 5px 0 3px; }
+    .status-large { font-size: 8.5pt; }
+    .badge { font-size: 6.5pt; padding: 0 4px; }
+    .pillars { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3mm; }
+    .pillar h3 { margin-bottom: 1mm; }
+    .pillar-item + .pillar-item { margin-top: 1mm; padding-top: 1mm; }
+    .pillar-item .name { font-size: 7.5pt; }
+    .pillar-item .kpi-value { font-size: 8.5pt; }
+    .health { margin-top: 2mm; padding: 1.5mm 0 0; gap: 1mm 10mm; break-inside: avoid; }
+    .health h2 { width: auto; }
+    .health-item .v { font-size: 8.5pt; }
+    .health-item .k { display: inline; margin-right: 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site-header">
+    <div>
+      <div class="brand">DCTI-Institute</div>
+      <h1 id="page-title"></h1>
+      <p class="meta"><span id="week-line"></span><span id="snapshot-line"></span></p>
+      <p id="sample-banner" class="sample-banner" hidden><span aria-hidden="true">●</span><span id="sample-text"></span></p>
+    </div>
+    <div class="controls">
+      <div>
+        <label class="control-label" id="week-label" for="week-select"></label>
+        <select id="week-select" disabled></select>
+      </div>
+      <div>
+        <span class="control-label" id="lang-label"></span>
+        <div class="lang-group" role="group" aria-labelledby="lang-label">
+          <button type="button" data-lang="pt-BR" aria-pressed="false" lang="pt-BR">PT-BR</button>
+          <button type="button" data-lang="en-CA" aria-pressed="false" lang="en-CA">EN-CA</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" aria-busy="true">
+    <div id="notice" role="alert" hidden></div>
+    <div id="content" hidden>
+      <section class="lead" aria-labelledby="strategy-title">
+        <div class="card strategy">
+          <h2 id="strategy-title"></h2>
+          <div id="strategy"></div>
+        </div>
+        <div>
+          <div class="boxes">
+            <article class="card box" aria-labelledby="box-executing-title">
+              <h2 id="box-executing-title"></h2>
+              <ul class="lines" id="box-executing"></ul>
+            </article>
+            <article class="card box" aria-labelledby="box-how-title">
+              <h2 id="box-how-title"></h2>
+              <div class="box-status" id="box-how-status"></div>
+              <ul class="lines" id="box-how"></ul>
+            </article>
+            <article class="card box" aria-labelledby="box-change-title">
+              <h2 id="box-change-title"></h2>
+              <ul class="lines" id="box-change"></ul>
+            </article>
+          </div>
+          <aside class="card needs" id="needs" aria-labelledby="needs-title" hidden>
+            <h2 id="needs-title"></h2>
+            <ul class="lines" id="needs-lines"></ul>
+          </aside>
+        </div>
+      </section>
+
+      <section aria-labelledby="funnel-title">
+        <h2 class="section-title" id="funnel-title"></h2>
+        <div class="table-scroll" role="region" aria-labelledby="funnel-title" tabindex="0">
+          <table id="funnel-table">
+            <caption id="funnel-caption"></caption>
+            <thead><tr id="funnel-head"></tr></thead>
+            <tbody id="funnel-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="pillars-title">
+        <h2 class="section-title" id="pillars-title"></h2>
+        <div class="pillars" id="pillars"></div>
+      </section>
+
+      <footer class="health" id="health" aria-labelledby="health-title" hidden>
+        <h2 id="health-title"></h2>
+        <div class="health-item" id="health-coverage" hidden></div>
+        <div class="health-item" id="health-review" hidden></div>
+      </footer>
+    </div>
+  </main>
+  <noscript>
+    <p class="notice" lang="en-CA">This dashboard needs JavaScript to show the data.</p>
+    <p class="notice" lang="pt-BR">Este painel precisa de JavaScript para mostrar os dados.</p>
+  </noscript>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // The only fixed texts in the script are error messages, in both languages.
+  var MSG = {
+    load: {
+      'en-CA': 'The dashboard data could not be loaded. Please try again later.',
+      'pt-BR': 'Não foi possível carregar os dados do painel. Tente novamente mais tarde.'
+    },
+    file: {
+      'en-CA': 'This page must be opened through a web server (for example: python3 -m http.server inside the site folder). It does not work from file://.',
+      'pt-BR': 'Esta página precisa ser aberta por um servidor web (por exemplo: python3 -m http.server dentro da pasta site). Ela não funciona via file://.'
+    },
+    week: {
+      'en-CA': 'The selected week could not be loaded. Showing the previous selection.',
+      'pt-BR': 'Não foi possível carregar a semana escolhida. Mantida a seleção anterior.'
+    },
+    week_missing: {
+      'en-CA': 'The week in the link ({week}) is not available. Showing the most recent week.',
+      'pt-BR': 'A semana do link ({week}) não está disponível. Mostrando a semana mais recente.'
+    }
+  };
+  var LANGS = ['en-CA', 'pt-BR'];
+  var COL = { 'en-CA': 'en_CA', 'pt-BR': 'pt_BR' };
+  var STATUS_ICON = { Green: '✓', Yellow: '!', Red: '✕', Gray: '–' };
+  var PILLAR_GROUPS = ['Content', 'External authority', 'Lead capture', 'Community'];
+  var DASH = '—';
+  var FILE_RE = /^[A-Za-z0-9_.-]+\.json$/;
+  var WEEK_RE = /^\d{4}-\d{2}-\d{2}$/;
+
+  // notice = { kind, vars } shown above the content; re-rendered when the language changes
+  var state = { lang: null, data: null, weeks: [], file: null, missing: {}, notice: null };
+
+  // ---------- small helpers
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text !== undefined && text !== null) n.textContent = String(text);
+    return n;
+  }
+  function clear(n) { while (n.firstChild) n.removeChild(n.firstChild); }
+  function isObj(x) { return x !== null && typeof x === 'object' && !Array.isArray(x); }
+  function isNum(x) { return typeof x === 'number' && isFinite(x); }
+  function str(x) { return (x === null || x === undefined) ? '' : String(x); }
+  function slug(s) { return str(s).toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, ''); }
+  function normLang(x) {
+    var s = str(x).trim().toLowerCase();
+    for (var i = 0; i < LANGS.length; i++) if (LANGS[i].toLowerCase() === s) return LANGS[i];
+    return null;
+  }
+  function param(name) {
+    try { return new URLSearchParams(window.location.search).get(name); } catch (e) { return null; }
+  }
+  function store(key, val) { try { window.localStorage.setItem(key, val); } catch (e) { /* no storage */ } }
+  function read(key) { try { return window.localStorage.getItem(key); } catch (e) { return null; } }
+
+  // label lookup: L(key) -> text in the active language, or a dash when the key is missing
+  function labelOr(key, fallback) {
+    var labels = state.data && isObj(state.data.labels) ? state.data.labels : {};
+    var row = labels[key];
+    var v = isObj(row) ? str(row[COL[state.lang]]).trim() : '';
+    if (v) return v;
+    state.missing[key] = true;
+    return fallback;
+  }
+  function L(key) { return labelOr(key, DASH); }
+  function fill(template, values) {
+    return template.replace(/\{(\w+)\}/g, function (m, k) { return values[k] !== undefined ? values[k] : m; });
+  }
+  function aiText(obj, base) {   // AI text columns: <base>_en_CA / <base>_pt_BR
+    return isObj(obj) ? str(obj[base + '_' + COL[state.lang]]).trim() : '';
+  }
+
+  // ---------- formatting (Intl)
+  function fmtNumber(v, unit, signed) {
+    if (!isNum(v)) return DASH;
+    var opts = { maximumFractionDigits: 1 };
+    if (unit && unit !== 'count') { opts = { style: 'currency', currency: unit, maximumFractionDigits: 0 }; }
+    if (signed) opts.signDisplay = 'exceptZero';
+    try { return new Intl.NumberFormat(state.lang, opts).format(v); }
+    catch (e) { return String(v); }
+  }
+  function fmtPct(v) {
+    if (!isNum(v)) return '';
+    try { return new Intl.NumberFormat(state.lang, { maximumFractionDigits: 1, signDisplay: 'exceptZero' }).format(v) + '%'; }
+    catch (e) { return String(v) + '%'; }
+  }
+  function parseDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(str(iso));
+    return m ? new Date(Date.UTC(+m[1], +m[2] - 1, +m[3])) : null;
+  }
+  function fmtDate(iso, opts) {
+    var d = parseDate(iso);
+    if (!d) return DASH;
+    try { return new Intl.DateTimeFormat(state.lang, Object.assign({ timeZone: 'UTC' }, opts)).format(d); }
+    catch (e) { return str(iso); }
+  }
+  function fmtRange(a, b) {
+    var da = parseDate(a), db = parseDate(b);
+    if (!da) return DASH;
+    if (!db) return fmtDate(a, { dateStyle: 'long' });
+    try {
+      var f = new Intl.DateTimeFormat(state.lang, { timeZone: 'UTC', day: 'numeric', month: 'short', year: 'numeric' });
+      return f.formatRange ? f.formatRange(da, db) : f.format(da) + ' – ' + f.format(db);
+    } catch (e) { return a + ' – ' + b; }
+  }
+
+  // ---------- building blocks
+  function statusBadge(status, large) {
+    var s = STATUS_ICON[status] ? status : 'Gray';
+    var b = el('span', 'status st-' + s.toLowerCase() + (large ? ' status-large' : ''));
+    var icon = el('span', 'icon', STATUS_ICON[s]);
+    icon.setAttribute('aria-hidden', 'true');
+    b.appendChild(icon);
+    b.appendChild(el('span', null, L('status.' + slug(s))));
+    return b;
+  }
+  function trackingBadge(tracking) {
+    var key = slug(tracking || 'Not yet');
+    return el('span', 'badge tr-' + key, L('tracking.' + key));
+  }
+  function lines(target, text) {
+    clear(target);
+    var parts = str(text).split(/\n+/).map(function (s) { return s.trim(); }).filter(Boolean);
+    if (!parts.length) parts = [DASH];
+    parts.forEach(function (p) { target.appendChild(el('li', null, p)); });
+    return parts;
+  }
+
+  // ---------- render
+  function render() {
+    var d = state.data;
+    if (!d) return;
+    state.missing = {};
+    var snap = isObj(d.snapshot) ? d.snapshot : {};
+    var kpi = isObj(d.kpi) ? d.kpi : {};
+
+    document.documentElement.lang = state.lang;
+    var title = L('page.title');
+    document.title = title === DASH ? 'DCTI-Institute' : title;
+    $('page-title').textContent = title;
+
+    var weekStart = snap.week_start || kpi.week_start;
+    $('week-line').textContent = '';
+    $('week-line').appendChild(el('strong', null, L('label.week') + ': '));
+    $('week-line').appendChild(document.createTextNode(fmtRange(weekStart, kpi.week_end)));
+    $('snapshot-line').textContent = L('label.snapshot_date') + ': ' + fmtDate(snap.snapshot_date, { dateStyle: 'long' });
+
+    $('sample-banner').hidden = d.sample !== true;
+    $('sample-text').textContent = L('label.sample_data');
+
+    // controls
+    $('week-label').textContent = L('label.week');
+    $('lang-label').textContent = L('lang.selector_label');
+    Array.prototype.forEach.call(document.querySelectorAll('.lang-group button'), function (b) {
+      var code = b.getAttribute('data-lang');
+      b.setAttribute('aria-pressed', code === state.lang ? 'true' : 'false');
+      b.setAttribute('aria-label', L('lang.' + COL[code]));
+      b.title = L('lang.' + COL[code]);
+    });
+    renderWeekOptions();
+
+    // strategy
+    $('strategy-title').textContent = L('label.strategy');
+    var sb = $('strategy');
+    clear(sb);
+    var strategy = Array.isArray(d.strategy) ? d.strategy : [];
+    if (!strategy.length) sb.appendChild(el('p', 'muted', DASH));
+    strategy.forEach(function (s) {
+      if (!isObj(s)) return;
+      var item = el('div', 'strategy-item');
+      item.appendChild(el('h3', null, labelOr('strategy.' + slug(s.topic), str(s.topic) || DASH)));
+      item.appendChild(el('p', null, aiText(s, 'text') || DASH));
+      sb.appendChild(item);
+    });
+
+    // boxes
+    $('box-executing-title').textContent = L('box.executing');
+    lines($('box-executing'), aiText(snap, 'executing_text'));
+    $('box-how-title').textContent = L('box.how_its_going');
+    var hs = $('box-how-status');
+    clear(hs);
+    hs.appendChild(statusBadge(snap.how_its_going_status || kpi.how_its_going_status, true));
+    lines($('box-how'), aiText(snap, 'how_its_going_text'));
+    $('box-change-title').textContent = L('box.what_to_change');
+    lines($('box-change'), aiText(snap, 'what_to_change_text'));
+    var needs = aiText(snap, 'needs_from_team');
+    $('needs').hidden = !needs;
+    $('needs-title').textContent = L('box.needs_from_team');
+    if (needs) lines($('needs-lines'), needs);
+
+    renderFunnel(kpi);
+    renderPillars(kpi);
+    renderHealth(kpi);
+
+    var missing = Object.keys(state.missing);
+    if (missing.length && window.console) console.warn('ui_labels keys missing for ' + state.lang + ':', missing);
+  }
+
+  function renderFunnel(kpi) {
+    $('funnel-title').textContent = L('label.funnel');
+    $('funnel-caption').textContent = L('label.funnel_caption');
+    var rows = Array.isArray(kpi.funnel) ? kpi.funnel.filter(isObj) : [];
+    var products = [], stages = [];
+    rows.forEach(function (r) {
+      if (products.indexOf(r.product) < 0) products.push(r.product);
+      if (stages.indexOf(r.stage) < 0) stages.push(r.stage);
+    });
+
+    var head = $('funnel-head');
+    clear(head);
+    var th0 = el('th', null, L('label.product'));
+    th0.scope = 'col';
+    head.appendChild(th0);
+    stages.forEach(function (s) {
+      var th = el('th', null, labelOr('stage.' + slug(s), str(s)));
+      th.scope = 'col';
+      head.appendChild(th);
+    });
+
+    var body = $('funnel-body');
+    clear(body);
+    if (!rows.length) {
+      var tr0 = el('tr');
+      var td0 = el('td', 'muted', L('label.no_data_yet'));
+      td0.colSpan = 7;
+      tr0.appendChild(td0);
+      body.appendChild(tr0);
+      return;
+    }
+    products.forEach(function (p) {
+      var tr = el('tr');
+      var th = el('th', null, labelOr('product.' + slug(p), str(p)));
+      th.scope = 'row';
+      tr.appendChild(th);
+      stages.forEach(function (s) {
+        var r = rows.filter(function (x) { return x.product === p && x.stage === s; })[0] || {};
+        tr.appendChild(funnelCell(r));
+      });
+      body.appendChild(tr);
+    });
+  }
+
+  function funnelCell(r) {
+    var provisional = r.provisional === true;   // comes from kpi_json (workflow B, PROVISIONAL_RULE)
+    var td = el('td');
+    var unit = r.unit && r.unit !== 'count' ? str(r.unit) : 'count';
+    if (isNum(r.value)) {
+      td.appendChild(el('span', 'value', fmtNumber(r.value, unit)));
+      var ch = el('span', 'change');
+      if (isNum(r.change_abs)) {
+        var arrow = r.change_abs > 0 ? '▲' : (r.change_abs < 0 ? '▼' : '▶');
+        var a = el('span', 'arrow', arrow + ' ');
+        a.setAttribute('aria-hidden', 'true');
+        ch.appendChild(a);
+        var txt = fmtNumber(r.change_abs, unit, true);
+        if (isNum(r.change_pct)) txt += ' (' + fmtPct(r.change_pct) + ')';
+        ch.appendChild(document.createTextNode(txt));
+      } else {
+        ch.appendChild(document.createTextNode(DASH));
+      }
+      ch.appendChild(el('span', 'visually-hidden', ' ' + L('label.vs_last_week')));
+      ch.title = L('label.vs_last_week');
+      td.appendChild(ch);
+      var badges = el('div', 'cell-badges');
+      badges.appendChild(statusBadge(r.status, false));
+      if (provisional) badges.appendChild(el('span', 'badge badge-provisional', L('badge.provisional')));
+      td.appendChild(badges);
+    } else {
+      td.appendChild(el('span', 'no-data', L('label.no_data_yet')));
+      if (provisional) {
+        var b = el('div', 'cell-badges');
+        b.appendChild(el('span', 'badge badge-provisional', L('badge.provisional')));
+        td.appendChild(b);
+      }
+    }
+    return td;
+  }
+
+  function renderPillars(kpi) {
+    $('pillars-title').textContent = L('label.pillars');
+    var box = $('pillars');
+    clear(box);
+    // pillars_all = every item (kpi_json from workflow B); older snapshots only have pillars_with_value.
+    var items = Array.isArray(kpi.pillars_all) ? kpi.pillars_all : (Array.isArray(kpi.pillars_with_value) ? kpi.pillars_with_value : []);
+    items = items.filter(isObj);
+    PILLAR_GROUPS.forEach(function (g) {
+      var card = el('div', 'card pillar');
+      card.appendChild(el('h3', null, L('pillar_group.' + slug(g))));
+      var mine = items.filter(function (i) { return i.group === g; });
+      if (!mine.length) card.appendChild(el('p', 'muted', L('label.no_data_yet')));
+      mine.forEach(function (i) {
+        var it = el('div', 'pillar-item');
+        it.appendChild(el('div', 'name', labelOr('pillar_item.' + slug(i.item), str(i.item) || DASH)));
+        var k = el('div', 'kpi');
+        k.appendChild(el('span', 'kpi-name', labelOr('kpi.' + slug(i.kpi_name), str(i.kpi_name) || DASH)));
+        var has = i.kpi_value !== null && i.kpi_value !== undefined && str(i.kpi_value) !== '';
+        if (has) {
+          var unit = str(i.unit) && i.unit !== 'count' ? str(i.unit) : 'count';   // "count" or a currency code (e.g. EUR)
+          var v = isNum(i.kpi_value) ? fmtNumber(i.kpi_value, unit) : str(i.kpi_value);
+          k.appendChild(el('span', 'kpi-value', v));
+        } else {
+          k.appendChild(el('span', 'muted', L('label.no_data_yet')));
+        }
+        k.appendChild(trackingBadge(i.tracking));
+        it.appendChild(k);
+        card.appendChild(it);
+      });
+      box.appendChild(card);
+    });
+  }
+
+  function renderHealth(kpi) {
+    var cov = isObj(kpi.automation_coverage) ? kpi.automation_coverage : null;
+    var rev = isObj(kpi.in_review) ? kpi.in_review : null;
+    $('health').hidden = !cov && !rev;
+    $('health-title').textContent = L('label.process_health');
+
+    var c = $('health-coverage');
+    clear(c);
+    c.hidden = !cov;
+    if (cov) {
+      c.appendChild(el('span', 'k', L('label.automation_coverage')));
+      var tmpl = labelOr('label.coverage_value', '{automated} / {total}');
+      c.appendChild(el('span', 'v', fill(tmpl, { automated: fmtNumber(cov.automated), total: fmtNumber(cov.total) })));
+      var detail = [];
+      if (isNum(cov.manual)) detail.push(fmtNumber(cov.manual) + ' ' + L('tracking.manual'));
+      if (isNum(cov.not_yet)) detail.push(fmtNumber(cov.not_yet) + ' ' + L('tracking.not_yet'));
+      if (detail.length) c.appendChild(el('span', 'detail', '(' + detail.join(' · ') + ')'));
+    }
+
+    var r = $('health-review');
+    clear(r);
+    r.hidden = !rev;
+    if (rev) {
+      r.appendChild(el('span', 'k', L('label.waiting_in_review_days')));
+      r.appendChild(el('span', 'v', fmtNumber(rev.max_days_waiting)));
+      if (isNum(rev.count)) r.appendChild(el('span', 'detail', '(' + L('label.items_in_review') + ': ' + fmtNumber(rev.count) + ')'));
+    }
+  }
+
+  function renderWeekOptions() {
+    var sel = $('week-select');
+    clear(sel);
+    state.weeks.forEach(function (w) {
+      var o = el('option', null, fmtDate(w.week_start, { dateStyle: 'medium' }));
+      o.value = w.file;
+      if (w.file === state.file) o.selected = true;
+      sel.appendChild(o);
+    });
+    sel.disabled = state.weeks.length < 2;
+  }
+
+  // ---------- notices
+  function showNotice(kind, vars) {
+    state.notice = { kind: kind, vars: vars || {} };
+    renderNotice();
+  }
+  function hideNotice() { state.notice = null; $('notice').hidden = true; }
+  function renderNotice() {
+    var n = $('notice');
+    clear(n);
+    if (!state.notice) { n.hidden = true; return; }
+    n.className = state.notice.kind === 'week_missing' ? 'notice notice-info' : 'notice';
+    var order = state.lang === 'pt-BR' ? ['pt-BR', 'en-CA'] : ['en-CA', 'pt-BR'];
+    order.forEach(function (lg) {
+      var p = el('p', null, fill(MSG[state.notice.kind][lg], state.notice.vars));
+      p.lang = lg;
+      n.appendChild(p);
+    });
+    n.hidden = false;
+  }
+
+  // ---------- data loading
+  function getJSON(path) {
+    return fetch(path, { cache: 'no-cache', credentials: 'same-origin' }).then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status + ' ' + path);
+      return res.json();
+    });
+  }
+  function validData(d) { return isObj(d) && (isObj(d.snapshot) || isObj(d.kpi)); }
+
+  function chooseLang(d) {
+    return normLang(param('lang')) || normLang(read('dcti_lang')) || normLang(d && d.default_language) || 'en-CA';
+  }
+
+  function loadWeek(file, isFirst) {
+    return getJSON('data/' + file).then(function (d) {
+      if (!validData(d)) throw new Error('invalid data');
+      state.data = d;
+      state.file = file;
+      if (isFirst) state.lang = chooseLang(d);
+      hideNotice();
+      $('content').hidden = false;
+      $('main').setAttribute('aria-busy', 'false');
+      render();
+      updateUrl();
+    });
+  }
+
+  function updateUrl() {
+    try {
+      var u = new URL(window.location.href);
+      var w = state.weeks.filter(function (x) { return x.file === state.file; })[0];
+      if (w && state.weeks[0] && w.file !== state.weeks[0].file) u.searchParams.set('week', w.week_start); else u.searchParams.delete('week');
+      window.history.replaceState(null, '', u.toString());
+    } catch (e) { /* ignore */ }
+  }
+
+  function init() {
+    state.lang = normLang(param('lang')) || normLang(read('dcti_lang')) || 'en-CA';
+    document.documentElement.lang = state.lang;
+    if (window.location.protocol === 'file:') { showNotice('file'); $('main').setAttribute('aria-busy', 'false'); return; }
+
+    var wanted = str(param('week')).trim();
+    if (wanted && !WEEK_RE.test(wanted)) wanted = wanted.slice(0, 40);   // shown back as text only
+    getJSON('data/index.json').then(function (idx) {
+      var weeks = isObj(idx) && Array.isArray(idx.weeks) ? idx.weeks : [];
+      state.weeks = weeks.filter(function (w) { return isObj(w) && FILE_RE.test(str(w.file)) && parseDate(w.week_start); });
+      if (!state.weeks.length) throw new Error('empty index');
+      var pick = state.weeks.filter(function (w) { return w.week_start === wanted; })[0];
+      return loadWeek((pick || state.weeks[0]).file, true).then(function () {
+        if (wanted && !pick) showNotice('week_missing', { week: wanted });
+      });
+    }).catch(function () {
+      // index.json missing or broken: fall back to latest.json
+      state.weeks = [];
+      return loadWeek('latest.json', true).then(function () {
+        var shown = state.data && state.data.snapshot ? str(state.data.snapshot.week_start) : '';
+        if (wanted && wanted !== shown) showNotice('week_missing', { week: wanted });
+      });
+    }).catch(function () {
+      showNotice('load');
+      $('main').setAttribute('aria-busy', 'false');
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll('.lang-group button'), function (b) {
+      b.addEventListener('click', function () {
+        var lg = normLang(b.getAttribute('data-lang'));
+        if (!lg) return;
+        state.lang = lg;
+        store('dcti_lang', lg);
+        try {
+          var u = new URL(window.location.href);
+          if (u.searchParams.has('lang')) { u.searchParams.set('lang', lg); window.history.replaceState(null, '', u.toString()); }
+        } catch (e) { /* ignore */ }
+        if (state.data) render(); else document.documentElement.lang = lg;
+        renderNotice();
+      });
+    });
+    $('week-select').addEventListener('change', function (e) {
+      var file = e.target.value;
+      if (!FILE_RE.test(file)) return;
+      var previous = state.file;
+      loadWeek(file, false).catch(function () {
+        state.file = previous;
+        renderWeekOptions();
+        showNotice('week');
+      });
+    });
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>
